@@ -111,7 +111,7 @@ function showNotification(message) {
 }
 
 // Simulated server fetch/post
-function fetchFromServer() {
+function fetchQuotesFromServer() {
   return new Promise(res => setTimeout(() => res([...mockServerQuotes]), 1000));
 }
 
@@ -130,7 +130,7 @@ function postToServer(newQuotes) {
 
 function startSync() {
   setInterval(async () => {
-    const serverQuotes = await fetchFromServer();
+    const serverQuotes = await fetchQuotesFromServer();
     const local = JSON.parse(localStorage.getItem("quotes")) || [];
     let updated = false;
 
@@ -151,7 +151,7 @@ function startSync() {
 }
 
 async function manualServerSync() {
-  const serverQuotes = await fetchFromServer();
+  const serverQuotes = await fetchQuotesFromServer();
   let newItems = 0;
 
   serverQuotes.forEach(sq => {
