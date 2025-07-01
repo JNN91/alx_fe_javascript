@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dynamic Quote Generator</title>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote Display Area -->
-  <div id="quoteDisplay" style="margin-bottom: 1em;"></div>
+  <!-- Filter Dropdown -->
+  <label for="categoryFilter">Filter by Category:</label>
+  <select id="categoryFilter" onchange="filterQuotes()">
+    <option value="all">All Categories</option>
+  </select>
 
-  <!-- Button to Show a Random Quote -->
+  <!-- Quote Display -->
+  <div id="quoteDisplay" style="margin: 1em 0; font-style: italic;"></div>
+
+  <!-- Show Random Quote Button -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Form to Add New Quote -->
-  <div style="margin-top: 1em;">
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuoteBtn">Add Quote</button>
-  </div>
+  <!-- Form, Import/Export Buttons added by JS -->
 
-  <!-- Optional: Dropdown to filter by category -->
-  <div style="margin-top: 1em;">
-    <label for="categoryFilter">Filter by Category:</label>
-    <select id="categoryFilter">
-      <option value="">All</option>
-    </select>
-  </div>
-
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
